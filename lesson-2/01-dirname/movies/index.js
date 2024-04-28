@@ -1,18 +1,18 @@
+
 const fs = require("node:fs/promises");
 const path = require("node:path");
 
-async function readMovies() {
-  const filePath = path.join(__dirname, "movies.txt");
 
-  const data = await fs.readFile(filePath, {
-    encoding: "utf-8",
-  });
+async function readMovies(){
+  const filePath = path.join(__dirname, "movies.txt")
+  console.log(`${__dirname}/movies.txt`);
+  console.log(filePath);
+const data = await fs.readFile(filePath, {encoding: "utf-8"});
+return data;
 
-  return data;
 }
 
 module.exports = {
   readMovies,
-};
-
+}
 // module.exports = readMovies;

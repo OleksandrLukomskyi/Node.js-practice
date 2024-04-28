@@ -1,4 +1,4 @@
-const movies = require("./movies");
+const movies = require("./movies/index");
 
 movies
   .readMovies()
@@ -6,5 +6,5 @@ movies
   .catch((error) => console.error(error));
 
 // movies()
-//   .then((data) => console.log(data))
-//   .catch((error) => console.error(error));
+// .then((data) => console.log(data))
+// .catch((error) => console.error(error));
