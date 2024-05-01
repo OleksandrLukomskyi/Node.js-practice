@@ -111,4 +111,4 @@ async function removeBook(id) {
 
   return removedBook;
 }
-export default {getBooks, getOneBook, createBook, updateBook, removeBook};
+export  {getBooks, getOneBook, createBook, updateBook, removeBook};
