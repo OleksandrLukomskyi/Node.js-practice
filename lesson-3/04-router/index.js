@@ -4,9 +4,6 @@ import routes from "./routes/index.js";
 
 const app = express();
 
-// app.use("/api/v1", routes);
-// app.use("/api/v2", routes);
-
 app.use(routes);
 
 app.listen(8080, () => {

@@ -1,17 +1,12 @@
-import express from "express";
-
-const PORT = 8080;
-
+import express, { response } from "express";
 const app = express();
 
 app.get("/", (request, response) => {
   response.send("Hello, Express!");
 });
-
 app.post("/movies", (req, res) => {
-  res.send("POST Movies:)");
+  res.send("Post Movies:)");
 });
-
-app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
+app.listen(8080, () => {
+  console.log("Server started on port 8080");
 });

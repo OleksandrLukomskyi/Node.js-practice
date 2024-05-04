@@ -1,5 +1,4 @@
 import express from "express";
-
 import userRoutes from "./users.js";
 import bookRoutes from "./books.js";
 import movieRoutes from "./movies.js";

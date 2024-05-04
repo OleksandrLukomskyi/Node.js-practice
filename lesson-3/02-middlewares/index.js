@@ -2,7 +2,6 @@ import * as fs from "node:fs/promises";
 import path from "node:path";
 
 import express from "express";
-
 const app = express();
 
 function checkAuth(req, res, next) {
@@ -14,18 +13,15 @@ function checkAuth(req, res, next) {
     return res.status(401).send("Please provide API Key");
   }
 
-  console.log("Complete");
-
   next();
 }
 
+// app.use(checkAuth);
+
 app.use((req, res, next) => {
   console.log("Middleware B");
-
   next();
 });
-
-// app.use(checkAuth);
 
 app.get("/movies", checkAuth, async (req, res) => {
   const data = await fs.readFile(path.resolve("movies.txt"), {
@@ -35,7 +31,7 @@ app.get("/movies", checkAuth, async (req, res) => {
   res.send(data);
 });
 
-app.post("/movies", checkAuth, (req, res) => {
+app.post("/movies", (req, res) => {
   res.send("POST Movies");
 });
 
