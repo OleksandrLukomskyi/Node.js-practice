@@ -1,4 +1,3 @@
-import 'dotenv/config';
 import express from 'express';
 
 import routes from './routes/index.js';
@@ -15,6 +14,10 @@ app.use((error, req, res, next) => {
   res.status(500).send('Internal Server Error');
 });
 
-app.listen(8080, () => {
-  console.log('Server started on port 8080');
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server started on port ${PORT}`);
 });
+// app.listen(8080, () => {
+//   console.log('Server started on port 8080');
+// });
