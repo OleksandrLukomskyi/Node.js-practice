@@ -52,7 +52,7 @@ async function login(req, res, next) {
     const token = jwt.sign(
       { id: user._id, name: user.name },
       process.env.JWT_SECRET,
-      { expiresIn: 60 * 60 }
+      { expiresIn: '24h' }
     );
     await User.findByIdAndUpdate(user._id, { token });
     res.send({ token });
