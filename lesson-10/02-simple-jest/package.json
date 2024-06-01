@@ -1,0 +1,12 @@
+{
+  "name": "02-simple-jest",
+  "version": "1.0.0",
+  "main": "sum.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
