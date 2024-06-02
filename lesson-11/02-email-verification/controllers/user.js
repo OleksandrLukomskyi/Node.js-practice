@@ -52,7 +52,8 @@ async function verify(req, res, next) {
     // await User.findByIdAndUpdate(user._id, { verify: true, verifyToken: null });
     const user = await User.findOneAndUpdate(
       { verifyToken: token },
-      { verify: true, verifyToken: null }
+      { verify: true, verifyToken: null },
+      { new: true }
     );
     if (user === null) {
       return res.status(404).send({ message: 'User not found' });
